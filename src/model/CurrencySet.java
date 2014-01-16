@@ -1,5 +1,7 @@
-package moneycalculator;
+package model;
 
+import model.Currency;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 
@@ -14,6 +16,13 @@ public class CurrencySet extends HashSet<Currency>{
     }
     public Currency search (String code){
         for (Currency currency: instance)
+            if (code.equals(currency.getCode()))
+                return currency;
+        return null;
+    }
+    
+    public Currency getCurrency(String code) {
+        for (Currency currency : this)
             if (code.equals(currency.getCode()))
                 return currency;
         return null;
